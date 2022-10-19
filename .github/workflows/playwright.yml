@@ -14,22 +14,15 @@ jobs:
         os: [macos]
         python-version: [ '3.7', '3.8', '3.9', '3.10']
     steps:
-    - name: Set up miniconda
-      uses: conda-incubator/setup-miniconda@v2
-      with:
-        miniconda-version: "latest"
-        activate-environment: playwright_testing
-        python-version: ${{ matrix.python-version }}
-        auto-activate-base: false
-
-    - name: Sh
-      shell: sh -l {0}
-      run: |
-        conda info
-        conda list
-
     - name: Checkout
       uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+      env:
+        AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
 
     - name: Set up Node
       uses: actions/setup-node@v1
