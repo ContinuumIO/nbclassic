@@ -12,16 +12,12 @@ jobs:
       fail-fast: false
       matrix:
         os: [macos]
-        python-version: [ '3.7', '3.8', '3.9', '3.10']
     steps:
     - name: Checkout
       uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v1
-      with:
-        python-version: ${{ matrix.python-version }}
-        architecture: 'x64'
 
     - name: Set up Node
       uses: actions/setup-node@v1
