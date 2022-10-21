@@ -11,21 +11,8 @@ jobs:
     strategy:
       fail-fast: false
     steps:
-    - name: Conda Init
+    - name: Conda Init & Initialize Playwright Env
       run: |
-        conda init bash
-        source ~/.bash_profile
-    - name: Conda Envs Available
-      run: |
-        conda info --envs
-    - name: Set Up Node
-      run: |
-        /Users/sseibert/miniconda3/envs/playwright/bin/npm install
-    - name: Python Package Installs
-      run: |
-        /Users/sseibert/miniconda3/envs/playwright/bin/pip install '.[test]'
-        /Users/sseibert/miniconda3/envs/playwright/bin/pip install pytest-playwright
-    - name: Run Tests
-      run: | 
-        /Users/sseibert/miniconda3/envs/playwright/bin/playwright install
-        /Users/sseibert/miniconda3/envs/playwright/bin/python -m pytest -sv nbclassic/tests/end_to_end
+        . ~/.bashrc
+        conda activate playwright
+    
