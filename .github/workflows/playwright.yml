@@ -11,12 +11,9 @@ jobs:
     strategy:
       fail-fast: false
     steps:
-    - name: Grab shell info
+    - name: Conda Init
       run: |
-        echo $SHELL
-    - name: Display Python3 Version
-      run: |
-        python3 --version
+        conda init bash
     - name: Create Conda Env
       run: |
         conda create -n playwright -y -c conda-forge python=3.9.12 nodejs
