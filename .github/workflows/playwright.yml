@@ -18,8 +18,11 @@ jobs:
     - name: Conda Envs Available
       run: |
         conda info --envs
-    - name: View Env Package Installs
+    - name: Package Installs
       run: |
-        cd /Users/sseibert/miniconda3/envs/playwright/bin
-        ls
-    
+        /Users/sseibert/miniconda3/envs/playwright/bin/pip install '.[test]'
+        /Users/sseibert/miniconda3/envs/playwright/bin/pip install pytest-playwright
+    - name: Run Tests
+      run: | 
+        /Users/sseibert/miniconda3/envs/playwright/bin/playwright install
+        /Users/sseibert/miniconda3/envs/playwright/bin/python -m pytest -sv nbclassic/tests/end_to_end
