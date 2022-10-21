@@ -15,10 +15,11 @@ jobs:
       run: |
         conda init bash
         source ~/.bash_profile
-    - name: Look at Conda Envs
+    - name: Conda Envs Available
       run: |
         conda info --envs
     - name: Run Tests
       run: |
-        /Users/sseibert/miniconda3/envs/playwright/bin/playwright install
+        /Users/sseibert/miniconda3/envs/playwright/lib/python3.9/site-packages/playwright install
+        /Users/sseibert/miniconda3/envs/playwright/bin/pip install '.[test]'
         /Users/sseibert/miniconda3/envs/playwright/bin/python -m pytest -sv nbclassic/tests/end_to_end
