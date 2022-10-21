@@ -11,15 +11,15 @@ jobs:
     strategy:
       fail-fast: false
     steps:
-    - name: Step 1
+    - name: Display Python3 Version
       run: |
-        whoami
-    - name: Step 2
+        python3 --version
+    - name: Create Conda Env
       run: |
-        which python
-    - name: Step 3
+        conda create -n playwright -y -c conda-forge python=3.9.12 nodejs
+    - name: Activate Conda Env
       run: |
-        which python3
-    - name: Step 4
+        conda activate playwright  
+    - name: Verify Conda Env Information
       run: |
-        which conda
+        conda info --envs
