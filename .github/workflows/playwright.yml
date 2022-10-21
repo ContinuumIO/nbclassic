@@ -17,8 +17,12 @@ jobs:
         source ~/.bash_profile
     - name: Create Conda Env
       run: |
-        conda create -n playwright -y -c conda-forge python=3.9.12 nodejs 
+        conda create -n playwright -y -c conda-forge python=3.9.12 nodejs
     - name: Activate Conda Env
       run: |
         /Users/sseibert/miniconda3/bin/activate playwright 
         conda info --envs 
+    - name: New Step
+      run: |
+        /Users/sseibert/miniconda3/envs/playwright/bin/pip install pytest-playwright
+        /Users/sseibert/miniconda3/envs/playwright/bin/python -c 'import playwright; playwright'
