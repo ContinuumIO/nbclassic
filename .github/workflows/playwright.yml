@@ -18,7 +18,10 @@ jobs:
     - name: Conda Envs Available
       run: |
         conda info --envs
-    - name: Package Installs
+    - name: Set Up Node
+      run: |
+        /Users/sseibert/miniconda3/envs/playwright/bin/npm install
+    - name: Python Package Installs
       run: |
         /Users/sseibert/miniconda3/envs/playwright/bin/pip install '.[test]'
         /Users/sseibert/miniconda3/envs/playwright/bin/pip install pytest-playwright
