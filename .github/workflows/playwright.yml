@@ -11,6 +11,9 @@ jobs:
     strategy:
       fail-fast: false
     steps:
+    - name: Grab shell info
+      run: |
+        echo $SHELL
     - name: Display Python3 Version
       run: |
         python3 --version
