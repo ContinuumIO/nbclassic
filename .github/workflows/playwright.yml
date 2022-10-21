@@ -15,9 +15,9 @@ jobs:
       run: |
         conda init bash
         source ~/.bash_profile
-    - name: Find Playwright
+    - name: Look at Conda Envs
       run: |
-        stat /Users/sseibert/miniconda3/envs/playwright/bin/playwright
+        conda info --envs
     - name: Run Tests
       run: |
         /Users/sseibert/miniconda3/envs/playwright/bin/playwright install
