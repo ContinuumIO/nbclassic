@@ -24,5 +24,5 @@ jobs:
         conda info --envs 
     - name: New Step
       run: |
-        /Users/sseibert/miniconda3/envs/playwright/bin/pip install pytest-playwright
-        /Users/sseibert/miniconda3/envs/playwright/bin/python -c 'import playwright;print(playwright)'
+        /Users/sseibert/miniconda3/envs/playwright/bin/playwright install
+        /Users/sseibert/miniconda3/envs/playwright/bin/python -m pytest -sv nbclassic/tests/end_to_end
