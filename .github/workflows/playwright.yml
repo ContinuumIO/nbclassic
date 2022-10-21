@@ -10,36 +10,16 @@ jobs:
     runs-on: self-hosted
     strategy:
       fail-fast: false
-      matrix:
-        os: [macos]
-        python-version: [ '3.7', '3.8', '3.9', '3.10']
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-
-    - name: Set up Python
-      uses: actions/setup-python@v1
-      with:
-        python-version: ${{ matrix.python-version }}
-      env:
-        AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
-
-    - name: Set up Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-
-    - name: Install JS
+    - name: Step 1
       run: |
-        npm install
-
-    - name: Install Python dependencies
+        whoami
+    - name: Step 2
       run: |
-        python -m pip install -U pip setuptools wheel
-        pip install pytest-playwright
-        playwright install
-        pip install .[test]
-
-    - name: Run Individual Tests
+        which python
+    - name: Step 3
       run: |
-        pytest -sv nbclassic/tests/end_to_end
+        which python3
+    - name: Step 4
+      run: |
+        which conda
