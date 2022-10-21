@@ -14,6 +14,7 @@ jobs:
     - name: Conda Init
       run: |
         conda init bash
+        source ~/.bash_profile
     - name: Create Conda Env
       run: |
         conda create -n playwright -y -c conda-forge python=3.9.12 nodejs
