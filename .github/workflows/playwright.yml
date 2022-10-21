@@ -20,7 +20,7 @@ jobs:
         conda create -n playwright -y -c conda-forge python=3.9.12 nodejs
     - name: Activate Conda Env
       run: |
-        conda activate playwright  
+        /Users/sseibert/miniconda3/bin/activate playwright  
     - name: Verify Conda Env Information
       run: |
         conda info --envs
