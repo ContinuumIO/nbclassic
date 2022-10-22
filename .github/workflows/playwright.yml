@@ -8,7 +8,9 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-    shell: bash -l {0}
+    defaults:
+      run:
+        shell: bash -l {0}
     strategy:
       fail-fast: false
     steps:
