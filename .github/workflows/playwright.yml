@@ -28,6 +28,7 @@ jobs:
       run: |
         cd /Users/sseibert/miniconda3/envs/playwright/bin
         ls -a
+        stat /Users/sseibert/miniconda3/envs/playwright/bin/npm
     - name: Python Package Installs
       run: |
         /Users/sseibert/miniconda3/envs/playwright/bin/pip install '.[test]'
