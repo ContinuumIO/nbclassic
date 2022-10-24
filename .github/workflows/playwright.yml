@@ -18,12 +18,14 @@ jobs:
       run: |
         conda init bash
         source ~/.bash_profile
+        source ~/.bashrc
     - name: Conda Envs Available
       run: |
         conda info --envs
     - name: Source Conda Env and Set Up Node
       run: |
         /Users/sseibert/miniconda3/bin/activate playwright ; conda info
+        /Users/sseibert/miniconda3/bin/activate playwright; /Users/sseibert/miniconda3/envs/playwright/bin/npm install
     - name: Python Package Installs
       run: |
         /Users/sseibert/miniconda3/envs/playwright/bin/pip install '.[test]'
