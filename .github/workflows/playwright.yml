@@ -24,7 +24,10 @@ jobs:
     - name: Source Conda Env and Set Up Node
       run: |
         /Users/sseibert/miniconda3/bin/activate playwright ; conda info
-        /Users/sseibert/miniconda3/bin/activate playwright; /Users/sseibert/miniconda3/envs/playwright/bin/npm install
+    - name: Find NPM executable
+      run: |
+        cd /Users/sseibert/miniconda3/envs/playwright/bin
+        ls -a
     - name: Python Package Installs
       run: |
         /Users/sseibert/miniconda3/envs/playwright/bin/pip install '.[test]'
