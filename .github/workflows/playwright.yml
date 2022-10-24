@@ -18,7 +18,6 @@ jobs:
       run: |
         conda init bash
         source ~/.bash_profile
-        source ~/.bashrc
     - name: Conda Envs Available
       run: |
         conda info --envs
